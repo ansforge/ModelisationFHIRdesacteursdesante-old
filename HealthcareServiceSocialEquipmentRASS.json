@@ -1,0 +1,247 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "99c4c829-2350-4355-b745-d9dd219af405",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:39:16.983+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-SocialEquipment-rass",
+  "version": "1.0",
+  "name": "HealthcareServiceSocialEquipmentRASS",
+  "status": "active",
+  "date": "2021-03-25T18:03:09.7622517+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "HealthcareService",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/HealthcareService",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "HealthcareService.meta",
+        "path": "HealthcareService.meta"
+      },
+      {
+        "id": "HealthcareService.meta.source",
+        "path": "HealthcareService.meta.source",
+        "fixedUri": "https://annuaire.sante.fr"
+      },
+      {
+        "id": "HealthcareService.meta.profile",
+        "path": "HealthcareService.meta.profile",
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/HealthcareService-SocialEquipment-rass"
+      },
+      {
+        "id": "HealthcareService.meta.security",
+        "path": "HealthcareService.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.meta.tag",
+        "path": "HealthcareService.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.implicitRules",
+        "path": "HealthcareService.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.text",
+        "path": "HealthcareService.text",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.contained",
+        "path": "HealthcareService.contained",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.extension",
+        "path": "HealthcareService.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "HealthcareService.extension:authorizationDate",
+        "path": "HealthcareService.extension",
+        "sliceName": "authorizationDate",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationDate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.extension:installationDate",
+        "path": "HealthcareService.extension",
+        "sliceName": "installationDate",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-installationDate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.identifier",
+        "path": "HealthcareService.identifier",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.category",
+        "path": "HealthcareService.category",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.type",
+        "path": "HealthcareService.type",
+        "binding": {
+          "strength": "required",
+          "description": "Binding JDV_J136- DisciplineEquipementSocial-RASS (dérivée de la TRE_R280-DisciplineEquipementSocial: « urn:oid: 1.2.250.1.213.1.6.1.133»)",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J136-DisciplineEquipementSocial-RASS/FHIR/JDV-J136-DisciplineEquipementSocial-RASS"
+        }
+      },
+      {
+        "id": "HealthcareService.specialty",
+        "path": "HealthcareService.specialty",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.location",
+        "path": "HealthcareService.location",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.name",
+        "path": "HealthcareService.name",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.comment",
+        "path": "HealthcareService.comment",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.extraDetails",
+        "path": "HealthcareService.extraDetails",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.photo",
+        "path": "HealthcareService.photo",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.telecom",
+        "path": "HealthcareService.telecom",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.coverageArea",
+        "path": "HealthcareService.coverageArea",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.serviceProvisionCode",
+        "path": "HealthcareService.serviceProvisionCode",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.eligibility.code",
+        "path": "HealthcareService.eligibility.code",
+        "binding": {
+          "strength": "extensible",
+          "description": "Binding JDV_J137-Clientele-RASS (dérivée de la TRE_R279-Clientele : « urn:oid: 1.2.250.1.213.1.6.1.132»)",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J137-Clientele-RASS/FHIR/JDV-J137-Clientele-RASS"
+        }
+      },
+      {
+        "id": "HealthcareService.eligibility.comment",
+        "path": "HealthcareService.eligibility.comment",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.program",
+        "path": "HealthcareService.program",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.characteristic",
+        "path": "HealthcareService.characteristic",
+        "binding": {
+          "strength": "extensible",
+          "description": "Binding JDV_J138- TypeActivite -RASS (dérivée de la TRE_R209-TypeActivite: « urn:oid: 1.2.250.1.213.2.2»)",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J138-TypeActivite-RASS/FHIR/JDV-J138-TypeActivite-RASS"
+        }
+      },
+      {
+        "id": "HealthcareService.communication",
+        "path": "HealthcareService.communication",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.referralMethod",
+        "path": "HealthcareService.referralMethod",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.appointmentRequired",
+        "path": "HealthcareService.appointmentRequired",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.availableTime",
+        "path": "HealthcareService.availableTime",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.notAvailable",
+        "path": "HealthcareService.notAvailable",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.availabilityExceptions",
+        "path": "HealthcareService.availabilityExceptions",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.endpoint",
+        "path": "HealthcareService.endpoint",
+        "max": "0"
+      }
+    ]
+  }
+}

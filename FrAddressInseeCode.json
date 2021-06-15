@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "875c0236-4704-42af-8617-ad3ad0a2509b",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:17:18.346+00:00"
+  },
+  "url": "http://www.interopsante.org/fhir/structuredefinition/datatype/fr-address-insee-code",
+  "version": "4.0.0",
+  "name": "FrAddressInseeCode",
+  "status": "active",
+  "date": "2021-03-25T16:53:54.7317179+00:00",
+  "publisher": "Interop'Santé",
+  "contact": [
+    {
+      "name": "François Macary/Isabelle Gibaud",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "francois.macary@phast.fr",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "This extension adds the insee code (5 digits) to the address | Ajout du code insee (5 chiffres) à l'adresse postale",
+  "purpose": "This extension adds to the address data type:\r\n-  \"Code commune INSEE\" (5 digits)",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Address"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://www.interopsante.org/fhir/structuredefinition/datatype/fr-address-insee-code"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "JDV_J102-1-CommuneOM-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J102-CommuneOM-RASS/FHIR/JDV-J102-CommuneOM-RASS"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cc2fe4f6-6d18-44dd-abac-6c2222900e2d",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:28:18.774+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name",
+  "version": "1.0",
+  "name": "PractitionerRoleName",
+  "status": "active",
+  "date": "2021-03-25T17:43:32.8543292Z",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "description": "Nom d'exercice",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "PractitionerRole"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "HumanName",
+            "profile": [
+              "http://www.interopsante.org/fhir/structuredefinition/datatype/fr-human-name"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

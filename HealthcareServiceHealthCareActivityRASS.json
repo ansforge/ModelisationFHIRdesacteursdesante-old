@@ -1,0 +1,294 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "0a3d36d6-f609-45c3-88d4-6e47aad24ae7",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:38:03.396+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-HealthCareActivity-rass",
+  "version": "1.0",
+  "name": "HealthcareServiceHealthCareActivityRASS",
+  "status": "active",
+  "date": "2021-03-25T18:01:42.2204017+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "HealthcareService",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/HealthcareService",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "HealthcareService.meta",
+        "path": "HealthcareService.meta"
+      },
+      {
+        "id": "HealthcareService.meta.source",
+        "path": "HealthcareService.meta.source",
+        "fixedUri": "https://annuaire.sante.fr"
+      },
+      {
+        "id": "HealthcareService.meta.profile",
+        "path": "HealthcareService.meta.profile",
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/HealthcareService-HealthCareActivity-rass"
+      },
+      {
+        "id": "HealthcareService.meta.security",
+        "path": "HealthcareService.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.meta.tag",
+        "path": "HealthcareService.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.implicitRules",
+        "path": "HealthcareService.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.text",
+        "path": "HealthcareService.text",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.contained",
+        "path": "HealthcareService.contained",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.extension",
+        "path": "HealthcareService.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "HealthcareService.extension:activityType",
+        "path": "HealthcareService.extension",
+        "sliceName": "activityType",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-activityType"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.extension:authorizationDate",
+        "path": "HealthcareService.extension",
+        "sliceName": "authorizationDate",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationDate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.extension:authorizationNumberARHGOS",
+        "path": "HealthcareService.extension",
+        "sliceName": "authorizationNumberARHGOS",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationNumberARHGOS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.extension:implementationPeriod",
+        "path": "HealthcareService.extension",
+        "sliceName": "implementationPeriod",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-implementationPeriod"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.extension:deleteAutorisationImplantation",
+        "path": "HealthcareService.extension",
+        "sliceName": "deleteAutorisationImplantation",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-deleteAutorisationImplantation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.extension:dateUpdateActivity",
+        "path": "HealthcareService.extension",
+        "sliceName": "dateUpdateActivity",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-dateUpdateActivity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.category",
+        "path": "HealthcareService.category",
+        "binding": {
+          "strength": "extensible",
+          "description": "Binding JDV_J132- ModaliteActivite-RASS (dérivée de la TRE_R275-ModaliteActivite: « urn:oid:1.2.250.1.213.1.6.1.127 »)",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS"
+        }
+      },
+      {
+        "id": "HealthcareService.type",
+        "path": "HealthcareService.type",
+        "binding": {
+          "strength": "example",
+          "description": "Binding JDV_J133-ActiviteSanitaireRegulee-RASS (dérivée de la TRE_R274-ActiviteSanitaireRegulee: « urn:oid: 1.2.250.1.213.1.6.1.126»)",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS"
+        }
+      },
+      {
+        "id": "HealthcareService.specialty",
+        "path": "HealthcareService.specialty",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.location",
+        "path": "HealthcareService.location",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.name",
+        "path": "HealthcareService.name",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.comment",
+        "path": "HealthcareService.comment",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.extraDetails",
+        "path": "HealthcareService.extraDetails",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.photo",
+        "path": "HealthcareService.photo",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.telecom",
+        "path": "HealthcareService.telecom",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.coverageArea",
+        "path": "HealthcareService.coverageArea",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.serviceProvisionCode",
+        "path": "HealthcareService.serviceProvisionCode",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.eligibility",
+        "path": "HealthcareService.eligibility",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.program",
+        "path": "HealthcareService.program",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.characteristic",
+        "path": "HealthcareService.characteristic",
+        "binding": {
+          "strength": "required",
+          "description": "Binding JDV_J134- FormeActivite-RASS (dérivée de la TRE_R276-FormeActivite : « urn:oid: 1.2.250.1.213.1.6.1.128»)",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J134-FormeActivite-RASS/FHIR/JDV-J134-FormeActivite-RASS"
+        }
+      },
+      {
+        "id": "HealthcareService.communication",
+        "path": "HealthcareService.communication",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.referralMethod",
+        "path": "HealthcareService.referralMethod",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.appointmentRequired",
+        "path": "HealthcareService.appointmentRequired",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.availableTime",
+        "path": "HealthcareService.availableTime",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.notAvailable",
+        "path": "HealthcareService.notAvailable",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.availabilityExceptions",
+        "path": "HealthcareService.availabilityExceptions",
+        "max": "0"
+      },
+      {
+        "id": "HealthcareService.endpoint",
+        "path": "HealthcareService.endpoint",
+        "max": "0"
+      }
+    ]
+  }
+}

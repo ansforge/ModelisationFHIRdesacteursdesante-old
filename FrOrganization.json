@@ -1,0 +1,210 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "4c109031-b251-47d8-bc19-e7125943aaf6",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:36:34.648+00:00"
+  },
+  "url": "http://interopsante.org/fhir/structuredefinition/resource/fr-organization",
+  "version": "4.0.1",
+  "name": "FrOrganization",
+  "status": "active",
+  "date": "2021-03-25T17:59:25.0929827+00:00",
+  "publisher": "Interop'Santé",
+  "contact": [
+    {
+      "name": "François Macary/Isabelle Gibaud",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "francois.macary@phast.fr",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Profile of the Organization resource for France | Profil de la ressource Organization pour la France\r\nThis profile specifies the types of identifiers for organizations in France, and adds a number of French extensions. | Ce profil spécifie les types d'identifiants pour l'organisation en France, et ajoute des extensions françaises.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.extension",
+        "path": "Organization.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Organization.extension:shortName",
+        "path": "Organization.extension",
+        "sliceName": "shortName",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://www.interopsante.org/fhir/structuredefinition/organization/fr-organization-shortname"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.extension:description",
+        "path": "Organization.extension",
+        "sliceName": "description",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://www.interopsante.org/fhir/structuredefinition/organization/fr-organization-description"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.extension:usePeriod",
+        "path": "Organization.extension",
+        "sliceName": "usePeriod",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/organization-period"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.identifier.use",
+        "path": "Organization.identifier.use",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+        }
+      },
+      {
+        "id": "Organization.identifier.type",
+        "path": "Organization.identifier.type",
+        "min": 1,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://www.interopsante.org/fhir/valueset/fr-organization-identifier-type"
+        }
+      },
+      {
+        "id": "Organization.identifier.system",
+        "path": "Organization.identifier.system",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier.value",
+        "path": "Organization.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding.system"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Organization.type:organisationType",
+        "path": "Organization.type",
+        "sliceName": "organisationType",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://www.interopsante.org/fhir/valueset/fr-organization-type"
+        }
+      },
+      {
+        "id": "Organization.type:organisationType.coding.system",
+        "path": "Organization.type.coding.system",
+        "fixedUri": "http://www.interopsante.org/fhir/valuesets/fr-organization-type"
+      },
+      {
+        "id": "Organization.type:organizationActivityField",
+        "path": "Organization.type",
+        "sliceName": "organizationActivityField",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://mos.asipsante.fr/NOS/TABS/JDV_J101-SecteurActivite-RASS.tabs"
+        }
+      },
+      {
+        "id": "Organization.type:organizationActivityField.coding.system",
+        "path": "Organization.type.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.71.4.2.4"
+      },
+      {
+        "id": "Organization.type:activiteINSEE",
+        "path": "Organization.type",
+        "sliceName": "activiteINSEE",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Sous-classes de la Nomenclature Activités Française (INSEE) des prof du RASS;http://mos.asipsante.fr/NOS/TABS/JDV_J99-InseeNAFrav2Niveau5-RASS.tabs",
+          "valueSet": "http://mos.asipsante.fr/NOS/TABS/JDV_J99-InseeNAFrav2Niveau5-RASS.tabs"
+        }
+      },
+      {
+        "id": "Organization.type:activiteINSEE.coding.system",
+        "path": "Organization.type.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.47"
+      },
+      {
+        "id": "Organization.type:statutJuridiqueINSEE",
+        "path": "Organization.type",
+        "sliceName": "statutJuridiqueINSEE",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Statut juridique FINESS dans le RASS, http://mos.asipsante.fr/NOS/TABS/JDV_J100-FinessStatutJuridique-RASS.tabs",
+          "valueSet": "http://mos.asipsante.fr/NOS/TABS/JDV_J100-FinessStatutJuridique-RASS.tabs"
+        }
+      },
+      {
+        "id": "Organization.type:statutJuridiqueINSEE.coding.system",
+        "path": "Organization.type.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.44"
+      },
+      {
+        "id": "Organization.partOf",
+        "path": "Organization.partOf",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://interopsante.org/fhir/structuredefinition/resource/fr-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.partOf.type",
+        "path": "Organization.partOf.type",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://www.interopsante.org/fhir/valueset/fr-organization-type"
+        }
+      }
+    ]
+  }
+}

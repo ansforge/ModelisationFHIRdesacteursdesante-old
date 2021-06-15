@@ -1,0 +1,193 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "a1411a70-d6fc-48c2-82de-4eb458122efb",
+  "meta": {
+    "lastUpdated": "2021-06-15T14:40:40.079+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-rass",
+  "version": "0.1",
+  "name": "OrganizationRASS",
+  "status": "active",
+  "date": "2021-05-14T13:30:25.2187439+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://interopsante.org/fhir/structuredefinition/resource/fr-organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.meta",
+        "path": "Organization.meta"
+      },
+      {
+        "id": "Organization.meta.source",
+        "path": "Organization.meta.source",
+        "fixedUri": "https://annuaire.sante.fr"
+      },
+      {
+        "id": "Organization.meta.profile",
+        "path": "Organization.meta.profile",
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/organization-rass"
+      },
+      {
+        "id": "Organization.extension",
+        "path": "Organization.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Organization.extension:shortName",
+        "path": "Organization.extension",
+        "sliceName": "shortName",
+        "max": "0"
+      },
+      {
+        "id": "Organization.extension:description",
+        "path": "Organization.extension",
+        "sliceName": "description",
+        "max": "0"
+      },
+      {
+        "id": "Organization.extension:pharmacyLicence",
+        "path": "Organization.extension",
+        "sliceName": "pharmacyLicence",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.extension:digitalCertificate",
+        "path": "Organization.extension",
+        "sliceName": "digitalCertificate",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/digitalCertificate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.extension:mailboxMSS",
+        "path": "Organization.extension",
+        "sliceName": "mailboxMSS",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.identifier.use",
+        "path": "Organization.identifier.use",
+        "fixedCode": "official"
+      },
+      {
+        "id": "Organization.type:organizationActivityField",
+        "path": "Organization.type",
+        "sliceName": "organizationActivityField",
+        "binding": {
+          "strength": "required",
+          "description": "Secteur d'Activite du RASS ;  https://mos.esante.gouv.fr/NOS/JDV_J101-SecteurActivite-RASS/FHIR/JDV-J101-SecteurActivite-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J101-SecteurActivite-RASS/FHIR/JDV-J101-SecteurActivite-RASS"
+        }
+      },
+      {
+        "id": "Organization.type:activiteINSEE",
+        "path": "Organization.type",
+        "sliceName": "activiteINSEE",
+        "binding": {
+          "strength": "required",
+          "description": "Sous-classes de la Nomenclature Activités Française (INSEE) des prof du RASS;https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS"
+        }
+      },
+      {
+        "id": "Organization.type:statutJuridiqueINSEE",
+        "path": "Organization.type",
+        "sliceName": "statutJuridiqueINSEE",
+        "binding": {
+          "strength": "required",
+          "description": "Statut juridique FINESS dans le RASS, https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS"
+        }
+      },
+      {
+        "id": "Organization.type:CategorieEtablissement",
+        "path": "Organization.type",
+        "sliceName": "CategorieEtablissement",
+        "binding": {
+          "strength": "required",
+          "description": "Binding JDV_J129- CategorieEtablissement-RASS (dérivé de la TRE_R66-CategorieEtablissement : « urn:oid: 1.2.250.1.213.1.6.1.8»)",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J129-CategorieEtablissement-RASS/FHIR/JDV-J129-CategorieEtablissement-RASS"
+        }
+      },
+      {
+        "id": "Organization.type:CategorieEtablissement.coding.system",
+        "path": "Organization.type.coding.system",
+        "fixedUri": "https://mos.esante.gouv.fr/NOS/TRE_R66-CategorieEtablissement/FHIR/TRE-R66-CategorieEtablissement"
+      },
+      {
+        "id": "Organization.type:SPH",
+        "path": "Organization.type",
+        "sliceName": "SPH",
+        "binding": {
+          "strength": "required",
+          "description": "Binding JDV_J162- ESPIC-RASS (dérivé de la TRE_R73-ESPIC: « urn:oid: 1.2.250.1.213.1.6.1.45»)",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS"
+        }
+      },
+      {
+        "id": "Organization.type:SPH.coding.system",
+        "path": "Organization.type.coding.system",
+        "fixedUri": "https://mos.esante.gouv.fr/NOS/TRE_R73-ESPIC/FHIR/TRE-R73-ESPIC"
+      },
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.contact",
+        "path": "Organization.contact",
+        "max": "0"
+      },
+      {
+        "id": "Organization.endpoint",
+        "path": "Organization.endpoint",
+        "max": "0"
+      }
+    ]
+  }
+}

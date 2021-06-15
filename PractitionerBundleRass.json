@@ -1,0 +1,203 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "093592ad-2e94-44a7-997c-96f30d4902df",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:53:20.669+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-bundle-rass",
+  "version": "1.0",
+  "name": "PractitionerBundleRass",
+  "status": "active",
+  "date": "2021-03-25T18:09:20.4901795+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta"
+      },
+      {
+        "id": "Bundle.meta.source",
+        "path": "Bundle.meta.source",
+        "fixedUri": "https://annuaire.sante.fr"
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/BundlePP-RASS"
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "fixedCode": "collection"
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "resource"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Bundle.entry:practitioner",
+        "path": "Bundle.entry",
+        "sliceName": "practitioner",
+        "short": "Entry obligatoire correspondant à la ressource Practitioner représentant la personne physique",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:practitioner.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-rass"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:professionalRole",
+        "path": "Bundle.entry",
+        "sliceName": "professionalRole",
+        "short": "Une ou plusieurs entry représentant les exercices professionnels (PractitionerRole) d'une personne physique"
+      },
+      {
+        "id": "Bundle.entry:professionalRole.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-professionalRole-rass"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:organizationalRole",
+        "path": "Bundle.entry",
+        "sliceName": "organizationalRole",
+        "short": "Une ou plusieurs entry correspondant aux situations d'exercice (PractitionerRole) d'une personne physique"
+      },
+      {
+        "id": "Bundle.entry:organizationalRole.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-organizationalRole-rass"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:organization",
+        "path": "Bundle.entry",
+        "sliceName": "organization",
+        "short": "Une ou plusieurs entry correspondant aux structures (Organization ) des situations d'exercice de la personne physique"
+      },
+      {
+        "id": "Bundle.entry:organization.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-rass"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:organization.resource.extension",
+        "path": "Bundle.entry.resource.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Bundle.entry:organization.resource.extension:usePeriod",
+        "path": "Bundle.entry.resource.extension",
+        "sliceName": "usePeriod",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:organization.resource.extension:pharmacyLicence",
+        "path": "Bundle.entry.resource.extension",
+        "sliceName": "pharmacyLicence",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:organization.resource.extension:digitalCertificate",
+        "path": "Bundle.entry.resource.extension",
+        "sliceName": "digitalCertificate",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:organization.resource.extension:mailboxMSS",
+        "path": "Bundle.entry.resource.extension",
+        "sliceName": "mailboxMSS",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:organization.resource.type",
+        "path": "Bundle.entry.resource.type",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:organization.resource.partOf",
+        "path": "Bundle.entry.resource.partOf",
+        "max": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "115b8189-59fc-44ec-ad81-91c242801df9",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:39:40.280+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/location-rass",
+  "version": "1.0",
+  "name": "LocationRASS",
+  "status": "active",
+  "date": "2021-03-25T18:04:21.8767179+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "description": "Profil de la ressource Location contained dans le profil Situation d'exercice de PractitionerRole. Elle contient l'adresse d'activité du professionnel.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Location",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Location",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Location.address",
+        "path": "Location.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

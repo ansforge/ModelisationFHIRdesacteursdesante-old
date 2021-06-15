@@ -1,0 +1,102 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "iso21090-ADXP-buildingNumberSuffix",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:06:38.096+00:00"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
+    }
+  ],
+  "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix",
+  "version": "4.0.0",
+  "name": "ADXPBuildingNumberSuffix",
+  "status": "active",
+  "date": "2021-03-25T16:16:54.9749658+00:00",
+  "publisher": "Health Level Seven International (Modeling and Methodology)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/mnm"
+        }
+      ]
+    }
+  ],
+  "description": "Any alphabetic character, fraction or other text that may appear after the numeric portion of a building number.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Address.line"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "buildingNumberSuffix",
+        "definition": "Any alphabetic character, fraction or other text that may appear after the numeric portion of a building number.",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=BNS]"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Extension.value[x]:valueString",
+        "path": "Extension.value[x]",
+        "sliceName": "valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

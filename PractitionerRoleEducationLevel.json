@@ -1,0 +1,231 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "8afdedb7-7d05-420b-8b3d-058bc823f2ac",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:26:08.769+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-educationLevel",
+  "version": "1.0",
+  "name": "PractitionerRoleEducationLevel",
+  "status": "active",
+  "date": "2021-03-25T17:33:02.0014034+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "description": "Niveau de formation acquis de l'étudiant.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "PractitionerRole"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Extension.extension:qualification",
+        "path": "Extension.extension",
+        "sliceName": "qualification",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:qualification.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "qualification"
+      },
+      {
+        "id": "Extension.extension:qualification.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS, https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:qualificationType",
+        "path": "Extension.extension",
+        "sliceName": "qualificationType",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:qualificationType.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "qualificationType"
+      },
+      {
+        "id": "Extension.extension:qualificationType.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Types de diplôme du RASS, https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:academicDegree",
+        "path": "Extension.extension",
+        "sliceName": "academicDegree",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:academicDegree.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "academicDegree"
+      },
+      {
+        "id": "Extension.extension:academicDegree.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Natures du cycle de formation des professionnels du RASS, http://mos.asipsante.fr/NOS/TABS/JDV_J86-NatCycleForm-RASS.tabs",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J86-NatCycleForm-RASS/FHIR/JDV-J86-NatCycleForm-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:achievedLevel",
+        "path": "Extension.extension",
+        "sliceName": "achievedLevel",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:achievedLevel.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "achievedLevel"
+      },
+      {
+        "id": "Extension.extension:achievedLevel.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Niveau de formation acquis dans le cycle de formation des professionnels du RASShttps://mos.esante.gouv.fr/NOS/JDV_J87-NiveauFormAcquis-RASS/FHIR/JDV-J87-NiveauFormAcquis-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J87-NiveauFormAcquis-RASS/FHIR/JDV-J87-NiveauFormAcquis-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:academicYear",
+        "path": "Extension.extension",
+        "sliceName": "academicYear",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:academicYear.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "academicYear"
+      },
+      {
+        "id": "Extension.extension:academicYear.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Années universitaires des professionnels du RASS, https://mos.esante.gouv.fr/NOS/JDV_J88-AnneeUniversitaire-RASS/FHIR/JDV-J88-AnneeUniversitaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J88-AnneeUniversitaire-RASS/FHIR/JDV-J88-AnneeUniversitaire-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:period",
+        "path": "Extension.extension",
+        "sliceName": "period",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:period.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "period"
+      },
+      {
+        "id": "Extension.extension:period.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:issuer",
+        "path": "Extension.extension",
+        "sliceName": "issuer",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:issuer.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "issuer"
+      },
+      {
+        "id": "Extension.extension:issuer.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:issuer.value[x].identifier.system",
+        "path": "Extension.extension.value[x].identifier.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.4.1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-educationLevel"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}
