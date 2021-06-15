@@ -1,0 +1,196 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="99c4c829-2350-4355-b745-d9dd219af405" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:39:16.983+00:00" />
+  </meta>
+  <url value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-SocialEquipment-rass" />
+  <version value="1.0" />
+  <name value="HealthcareServiceSocialEquipmentRASS" />
+  <status value="active" />
+  <date value="2021-03-25T18:03:09.7622517+00:00" />
+  <publisher value="ANS" />
+  <contact>
+    <name value="monserviceclient.annuaire@asipsante.fr" />
+  </contact>
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="HealthcareService" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/HealthcareService" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="HealthcareService.meta">
+      <path value="HealthcareService.meta" />
+    </element>
+    <element id="HealthcareService.meta.source">
+      <path value="HealthcareService.meta.source" />
+      <fixedUri value="https://annuaire.sante.fr" />
+    </element>
+    <element id="HealthcareService.meta.profile">
+      <path value="HealthcareService.meta.profile" />
+      <fixedCanonical value="https://apifhir.annuaire.sante.fr/exposed/structuredefinition/HealthcareService-SocialEquipment-rass" />
+    </element>
+    <element id="HealthcareService.meta.security">
+      <path value="HealthcareService.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.meta.tag">
+      <path value="HealthcareService.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.implicitRules">
+      <path value="HealthcareService.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.text">
+      <path value="HealthcareService.text" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.contained">
+      <path value="HealthcareService.contained" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.extension">
+      <path value="HealthcareService.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="HealthcareService.extension:authorizationDate">
+      <path value="HealthcareService.extension" />
+      <sliceName value="authorizationDate" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationDate" />
+      </type>
+    </element>
+    <element id="HealthcareService.extension:installationDate">
+      <path value="HealthcareService.extension" />
+      <sliceName value="installationDate" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-installationDate" />
+      </type>
+    </element>
+    <element id="HealthcareService.identifier">
+      <path value="HealthcareService.identifier" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.category">
+      <path value="HealthcareService.category" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.type">
+      <path value="HealthcareService.type" />
+      <binding>
+        <strength value="required" />
+        <description value="Binding JDV_J136- DisciplineEquipementSocial-RASS (dérivée de la TRE_R280-DisciplineEquipementSocial: « urn:oid: 1.2.250.1.213.1.6.1.133»)" />
+        <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J136-DisciplineEquipementSocial-RASS/FHIR/JDV-J136-DisciplineEquipementSocial-RASS" />
+      </binding>
+    </element>
+    <element id="HealthcareService.specialty">
+      <path value="HealthcareService.specialty" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.location">
+      <path value="HealthcareService.location" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.name">
+      <path value="HealthcareService.name" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.comment">
+      <path value="HealthcareService.comment" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.extraDetails">
+      <path value="HealthcareService.extraDetails" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.photo">
+      <path value="HealthcareService.photo" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.telecom">
+      <path value="HealthcareService.telecom" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.coverageArea">
+      <path value="HealthcareService.coverageArea" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.serviceProvisionCode">
+      <path value="HealthcareService.serviceProvisionCode" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.eligibility.code">
+      <path value="HealthcareService.eligibility.code" />
+      <binding>
+        <strength value="extensible" />
+        <description value="Binding JDV_J137-Clientele-RASS (dérivée de la TRE_R279-Clientele : « urn:oid: 1.2.250.1.213.1.6.1.132»)" />
+        <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J137-Clientele-RASS/FHIR/JDV-J137-Clientele-RASS" />
+      </binding>
+    </element>
+    <element id="HealthcareService.eligibility.comment">
+      <path value="HealthcareService.eligibility.comment" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.program">
+      <path value="HealthcareService.program" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.characteristic">
+      <path value="HealthcareService.characteristic" />
+      <binding>
+        <strength value="extensible" />
+        <description value="Binding JDV_J138- TypeActivite -RASS (dérivée de la TRE_R209-TypeActivite: « urn:oid: 1.2.250.1.213.2.2»)" />
+        <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J138-TypeActivite-RASS/FHIR/JDV-J138-TypeActivite-RASS" />
+      </binding>
+    </element>
+    <element id="HealthcareService.communication">
+      <path value="HealthcareService.communication" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.referralMethod">
+      <path value="HealthcareService.referralMethod" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.appointmentRequired">
+      <path value="HealthcareService.appointmentRequired" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.availableTime">
+      <path value="HealthcareService.availableTime" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.notAvailable">
+      <path value="HealthcareService.notAvailable" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.availabilityExceptions">
+      <path value="HealthcareService.availabilityExceptions" />
+      <max value="0" />
+    </element>
+    <element id="HealthcareService.endpoint">
+      <path value="HealthcareService.endpoint" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

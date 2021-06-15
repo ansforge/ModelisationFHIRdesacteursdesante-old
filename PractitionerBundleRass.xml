@@ -1,0 +1,156 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="093592ad-2e94-44a7-997c-96f30d4902df" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:53:20.669+00:00" />
+  </meta>
+  <url value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-bundle-rass" />
+  <version value="1.0" />
+  <name value="PractitionerBundleRass" />
+  <status value="active" />
+  <date value="2021-03-25T18:09:20.4901795+00:00" />
+  <publisher value="ANS" />
+  <contact>
+    <name value="monserviceclient.annuaire@asipsante.fr" />
+  </contact>
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Bundle" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Bundle.meta">
+      <path value="Bundle.meta" />
+    </element>
+    <element id="Bundle.meta.source">
+      <path value="Bundle.meta.source" />
+      <fixedUri value="https://annuaire.sante.fr" />
+    </element>
+    <element id="Bundle.meta.profile">
+      <path value="Bundle.meta.profile" />
+      <fixedCanonical value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/BundlePP-RASS" />
+    </element>
+    <element id="Bundle.type">
+      <path value="Bundle.type" />
+      <fixedCode value="collection" />
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="resource" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Bundle.entry:practitioner">
+      <path value="Bundle.entry" />
+      <sliceName value="practitioner" />
+      <short value="Entry obligatoire correspondant à la ressource Practitioner représentant la personne physique" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:practitioner.resource">
+      <path value="Bundle.entry.resource" />
+      <type>
+        <code value="Resource" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-rass" />
+      </type>
+    </element>
+    <element id="Bundle.entry:professionalRole">
+      <path value="Bundle.entry" />
+      <sliceName value="professionalRole" />
+      <short value="Une ou plusieurs entry représentant les exercices professionnels (PractitionerRole) d'une personne physique" />
+    </element>
+    <element id="Bundle.entry:professionalRole.resource">
+      <path value="Bundle.entry.resource" />
+      <type>
+        <code value="Resource" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-professionalRole-rass" />
+      </type>
+    </element>
+    <element id="Bundle.entry:organizationalRole">
+      <path value="Bundle.entry" />
+      <sliceName value="organizationalRole" />
+      <short value="Une ou plusieurs entry correspondant aux situations d'exercice (PractitionerRole) d'une personne physique" />
+    </element>
+    <element id="Bundle.entry:organizationalRole.resource">
+      <path value="Bundle.entry.resource" />
+      <type>
+        <code value="Resource" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-organizationalRole-rass" />
+      </type>
+    </element>
+    <element id="Bundle.entry:organization">
+      <path value="Bundle.entry" />
+      <sliceName value="organization" />
+      <short value="Une ou plusieurs entry correspondant aux structures (Organization ) des situations d'exercice de la personne physique" />
+    </element>
+    <element id="Bundle.entry:organization.resource">
+      <path value="Bundle.entry.resource" />
+      <type>
+        <code value="Resource" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-rass" />
+      </type>
+    </element>
+    <element id="Bundle.entry:organization.resource.extension">
+      <path value="Bundle.entry.resource.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Bundle.entry:organization.resource.extension:usePeriod">
+      <path value="Bundle.entry.resource.extension" />
+      <sliceName value="usePeriod" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:organization.resource.extension:pharmacyLicence">
+      <path value="Bundle.entry.resource.extension" />
+      <sliceName value="pharmacyLicence" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:organization.resource.extension:digitalCertificate">
+      <path value="Bundle.entry.resource.extension" />
+      <sliceName value="digitalCertificate" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:organization.resource.extension:mailboxMSS">
+      <path value="Bundle.entry.resource.extension" />
+      <sliceName value="mailboxMSS" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:organization.resource.type">
+      <path value="Bundle.entry.resource.type" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:organization.resource.partOf">
+      <path value="Bundle.entry.resource.partOf" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

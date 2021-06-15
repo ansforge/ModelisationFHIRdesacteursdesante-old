@@ -1,0 +1,53 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="875c0236-4704-42af-8617-ad3ad0a2509b" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:17:18.346+00:00" />
+  </meta>
+  <url value="http://www.interopsante.org/fhir/structuredefinition/datatype/fr-address-insee-code" />
+  <version value="4.0.0" />
+  <name value="FrAddressInseeCode" />
+  <status value="active" />
+  <date value="2021-03-25T16:53:54.7317179+00:00" />
+  <publisher value="Interop'Santé" />
+  <contact>
+    <name value="François Macary/Isabelle Gibaud" />
+    <telecom>
+      <system value="email" />
+      <value value="francois.macary@phast.fr" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="This extension adds the insee code (5 digits) to the address | Ajout du code insee (5 chiffres) à l'adresse postale" />
+  <purpose value="This extension adds to the address data type:&#xD;&#xA;-  &quot;Code commune INSEE&quot; (5 digits)" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Address" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://www.interopsante.org/fhir/structuredefinition/datatype/fr-address-insee-code" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="code" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="JDV_J102-1-CommuneOM-RASS" />
+        <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J102-CommuneOM-RASS/FHIR/JDV-J102-CommuneOM-RASS" />
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

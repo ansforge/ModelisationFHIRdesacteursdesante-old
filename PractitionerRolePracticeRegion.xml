@@ -1,0 +1,48 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="6ee53fc7-8fd9-4391-a984-454c007c219b" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:30:55.170+00:00" />
+  </meta>
+  <url value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-practiceRegion" />
+  <version value="1.0" />
+  <name value="PractitionerRolePracticeRegion" />
+  <status value="active" />
+  <date value="2021-03-25T17:47:18.2312647+00:00" />
+  <publisher value="ANS" />
+  <contact>
+    <name value="monserviceclient.annuaire@asipsante.fr" />
+  </contact>
+  <description value="Région d'exercice du professionnel" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="PractitionerRole" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-practiceRegion" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="Régions (outre-mer et Monaco inclus) dans le RASS https://mos.esante.gouv.fr/NOS/JDV_J93-RegionOM-RASS/FHIR/JDV-J93-RegionOM-RASS" />
+        <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J93-RegionOM-RASS/FHIR/JDV-J93-RegionOM-RASS" />
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

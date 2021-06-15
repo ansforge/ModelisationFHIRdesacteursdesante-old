@@ -1,0 +1,164 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="4c109031-b251-47d8-bc19-e7125943aaf6" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:36:34.648+00:00" />
+  </meta>
+  <url value="http://interopsante.org/fhir/structuredefinition/resource/fr-organization" />
+  <version value="4.0.1" />
+  <name value="FrOrganization" />
+  <status value="active" />
+  <date value="2021-03-25T17:59:25.0929827+00:00" />
+  <publisher value="Interop'Santé" />
+  <contact>
+    <name value="François Macary/Isabelle Gibaud" />
+    <telecom>
+      <system value="email" />
+      <value value="francois.macary@phast.fr" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="Profile of the Organization resource for France | Profil de la ressource Organization pour la France&#xD;&#xA;This profile specifies the types of identifiers for organizations in France, and adds a number of French extensions. | Ce profil spécifie les types d'identifiants pour l'organisation en France, et ajoute des extensions françaises." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Organization" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Organization" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Organization.extension">
+      <path value="Organization.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Organization.extension:shortName">
+      <path value="Organization.extension" />
+      <sliceName value="shortName" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.interopsante.org/fhir/structuredefinition/organization/fr-organization-shortname" />
+      </type>
+    </element>
+    <element id="Organization.extension:description">
+      <path value="Organization.extension" />
+      <sliceName value="description" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.interopsante.org/fhir/structuredefinition/organization/fr-organization-description" />
+      </type>
+    </element>
+    <element id="Organization.extension:usePeriod">
+      <path value="Organization.extension" />
+      <sliceName value="usePeriod" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/organization-period" />
+      </type>
+    </element>
+    <element id="Organization.identifier.use">
+      <path value="Organization.identifier.use" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use" />
+      </binding>
+    </element>
+    <element id="Organization.identifier.type">
+      <path value="Organization.identifier.type" />
+      <min value="1" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://www.interopsante.org/fhir/valueset/fr-organization-identifier-type" />
+      </binding>
+    </element>
+    <element id="Organization.identifier.system">
+      <path value="Organization.identifier.system" />
+      <min value="1" />
+    </element>
+    <element id="Organization.identifier.value">
+      <path value="Organization.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Organization.type">
+      <path value="Organization.type" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Organization.type:organisationType">
+      <path value="Organization.type" />
+      <sliceName value="organisationType" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://www.interopsante.org/fhir/valueset/fr-organization-type" />
+      </binding>
+    </element>
+    <element id="Organization.type:organisationType.coding.system">
+      <path value="Organization.type.coding.system" />
+      <fixedUri value="http://www.interopsante.org/fhir/valuesets/fr-organization-type" />
+    </element>
+    <element id="Organization.type:organizationActivityField">
+      <path value="Organization.type" />
+      <sliceName value="organizationActivityField" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://mos.asipsante.fr/NOS/TABS/JDV_J101-SecteurActivite-RASS.tabs" />
+      </binding>
+    </element>
+    <element id="Organization.type:organizationActivityField.coding.system">
+      <path value="Organization.type.coding.system" />
+      <fixedUri value="urn:oid:1.2.250.1.71.4.2.4" />
+    </element>
+    <element id="Organization.type:activiteINSEE">
+      <path value="Organization.type" />
+      <sliceName value="activiteINSEE" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="Sous-classes de la Nomenclature Activités Française (INSEE) des prof du RASS;http://mos.asipsante.fr/NOS/TABS/JDV_J99-InseeNAFrav2Niveau5-RASS.tabs" />
+        <valueSet value="http://mos.asipsante.fr/NOS/TABS/JDV_J99-InseeNAFrav2Niveau5-RASS.tabs" />
+      </binding>
+    </element>
+    <element id="Organization.type:activiteINSEE.coding.system">
+      <path value="Organization.type.coding.system" />
+      <fixedUri value="urn:oid:1.2.250.1.213.1.6.1.47" />
+    </element>
+    <element id="Organization.type:statutJuridiqueINSEE">
+      <path value="Organization.type" />
+      <sliceName value="statutJuridiqueINSEE" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="Statut juridique FINESS dans le RASS, http://mos.asipsante.fr/NOS/TABS/JDV_J100-FinessStatutJuridique-RASS.tabs" />
+        <valueSet value="http://mos.asipsante.fr/NOS/TABS/JDV_J100-FinessStatutJuridique-RASS.tabs" />
+      </binding>
+    </element>
+    <element id="Organization.type:statutJuridiqueINSEE.coding.system">
+      <path value="Organization.type.coding.system" />
+      <fixedUri value="urn:oid:1.2.250.1.213.1.6.1.44" />
+    </element>
+    <element id="Organization.partOf">
+      <path value="Organization.partOf" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://interopsante.org/fhir/structuredefinition/resource/fr-organization" />
+      </type>
+    </element>
+    <element id="Organization.partOf.type">
+      <path value="Organization.partOf.type" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://www.interopsante.org/fhir/valueset/fr-organization-type" />
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

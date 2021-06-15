@@ -1,0 +1,47 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="43907108-8dfc-4d1c-9d14-83a2c3c862b5" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:19:29.968+00:00" />
+  </meta>
+  <url value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-activityType" />
+  <version value="1.0" />
+  <name value="HealthcareServiceActivityType" />
+  <status value="active" />
+  <date value="2021-03-25T17:09:14.7755743+00:00" />
+  <publisher value="ANS" />
+  <contact>
+    <name value="monserviceclient.annuaire@asipsante.fr" />
+  </contact>
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="HealthcareService" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-activityType" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="extensible" />
+        <description value="JDV_J131-CategorieActiviteSanitaireRegulee-RASS ( dérivée de la TRE_R277-CategorieActiviteSanitaireRegulee.tabs: « urn:oid: 1.2.250.1.213.1.6.1.129»)" />
+        <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J131-CategorieActiviteSanitaireRegulee-RASS/FHIR/JDV-J131-CategorieActiviteSanitaireRegulee-RASS" />
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

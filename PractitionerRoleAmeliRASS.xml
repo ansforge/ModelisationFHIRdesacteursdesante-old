@@ -1,0 +1,210 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="5cfb933e-c9b6-4c86-a7be-5cd1d7bbf055" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:50:36.922+00:00" />
+  </meta>
+  <url value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-ameli-rass" />
+  <version value="1.0" />
+  <name value="PractitionerRoleAmeliRASS" />
+  <status value="active" />
+  <date value="2021-03-25T18:12:50.4115921+00:00" />
+  <publisher value="ANS" />
+  <contact>
+    <name value="monserviceclient.annuaire@asipsante.fr" />
+  </contact>
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="PractitionerRole" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="PractitionerRole.meta">
+      <path value="PractitionerRole.meta" />
+    </element>
+    <element id="PractitionerRole.meta.source">
+      <path value="PractitionerRole.meta.source" />
+      <fixedUri value="https://annuaire.sante.fr" />
+    </element>
+    <element id="PractitionerRole.meta.profile">
+      <path value="PractitionerRole.meta.profile" />
+      <fixedCanonical value="https://apifhir.annuaire.sante.fr/exposed/structuredefinition/practitionerRole-ameli-rass" />
+    </element>
+    <element id="PractitionerRole.meta.security">
+      <path value="PractitionerRole.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.meta.tag">
+      <path value="PractitionerRole.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.implicitRules">
+      <path value="PractitionerRole.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.text">
+      <path value="PractitionerRole.text" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.contained">
+      <path value="PractitionerRole.contained" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.extension">
+      <path value="PractitionerRole.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="PractitionerRole.extension:partOf">
+      <path value="PractitionerRole.extension" />
+      <sliceName value="partOf" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-partOf" />
+      </type>
+    </element>
+    <element id="PractitionerRole.extension:contracted">
+      <path value="PractitionerRole.extension" />
+      <sliceName value="contracted" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-contracted" />
+      </type>
+    </element>
+    <element id="PractitionerRole.extension:hasCAS">
+      <path value="PractitionerRole.extension" />
+      <sliceName value="hasCAS" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-hasCAS" />
+      </type>
+    </element>
+    <element id="PractitionerRole.extension:vitaleAccepted">
+      <path value="PractitionerRole.extension" />
+      <sliceName value="vitaleAccepted" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-vitaleAccepted" />
+      </type>
+    </element>
+    <element id="PractitionerRole.identifier">
+      <path value="PractitionerRole.identifier" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.period">
+      <path value="PractitionerRole.period" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.organization">
+      <path value="PractitionerRole.organization" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.code">
+      <path value="PractitionerRole.code" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.specialty">
+      <path value="PractitionerRole.specialty" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.location">
+      <path value="PractitionerRole.location" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.healthcareService">
+      <path value="PractitionerRole.healthcareService" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.telecom.id">
+      <path value="PractitionerRole.telecom.id" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.telecom.use">
+      <path value="PractitionerRole.telecom.use" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.telecom.rank">
+      <path value="PractitionerRole.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.telecom.period">
+      <path value="PractitionerRole.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.availableTime.extension">
+      <path value="PractitionerRole.availableTime.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="PractitionerRole.availableTime.extension:appointmentRequired">
+      <path value="PractitionerRole.availableTime.extension" />
+      <sliceName value="appointmentRequired" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-appointmentRequired" />
+      </type>
+    </element>
+    <element id="PractitionerRole.availableTime.extension:homeCare">
+      <path value="PractitionerRole.availableTime.extension" />
+      <sliceName value="homeCare" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-homeCare" />
+      </type>
+    </element>
+    <element id="PractitionerRole.availableTime.extension:activityType">
+      <path value="PractitionerRole.availableTime.extension" />
+      <sliceName value="activityType" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-activityType" />
+      </type>
+    </element>
+    <element id="PractitionerRole.notAvailable">
+      <path value="PractitionerRole.notAvailable" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.availabilityExceptions">
+      <path value="PractitionerRole.availabilityExceptions" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.endpoint">
+      <path value="PractitionerRole.endpoint" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

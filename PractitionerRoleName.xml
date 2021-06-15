@@ -1,0 +1,39 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="cc2fe4f6-6d18-44dd-abac-6c2222900e2d" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:28:18.774+00:00" />
+  </meta>
+  <url value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name" />
+  <version value="1.0" />
+  <name value="PractitionerRoleName" />
+  <status value="active" />
+  <date value="2021-03-25T17:43:32.8543292Z" />
+  <publisher value="ANS" />
+  <contact>
+    <name value="monserviceclient.annuaire@asipsante.fr" />
+  </contact>
+  <description value="Nom d'exercice" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="PractitionerRole" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://www.interopsante.org/fhir/structuredefinition/datatype/fr-human-name" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

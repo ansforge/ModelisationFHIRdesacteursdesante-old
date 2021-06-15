@@ -1,0 +1,43 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="f34f3957-6457-4e45-845b-324aeb69ce9a" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:12:54.895+00:00" />
+  </meta>
+  <url value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/address-country-code" />
+  <version value="1.0" />
+  <name value="CountryCode" />
+  <status value="active" />
+  <date value="2021-03-25T16:28:16.6814442+00:00" />
+  <publisher value="ANS" />
+  <contact>
+    <name value="monserviceclient.annuaire@asipsante.fr" />
+  </contact>
+  <description value="Code pays" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Address" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/address-country-code" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="code" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="Pays (codes INSEE) du RASS; http://mos.asipsante.fr/NOS/TABS/JDV_J74-Pays-RASS.tabs" />
+        <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J74-Pays-RASS/FHIR/JDV-J74-Pays-RASS" />
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

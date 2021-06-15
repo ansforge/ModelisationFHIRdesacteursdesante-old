@@ -1,0 +1,58 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ca8305db-efd5-467a-ac0c-7152fafc7dc1" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:19:10.756+00:00" />
+  </meta>
+  <url value="http://www.interopsante.org/fhir/structuredefinition/organization/fr-organization-shortname" />
+  <version value="4.0.0" />
+  <name value="FrOrganizationShortName" />
+  <status value="active" />
+  <date value="2021-03-25T17:08:11.9773566+00:00" />
+  <publisher value="Interop'Santé" />
+  <contact>
+    <name value="François Macary/Isabelle Gibaud" />
+    <telecom>
+      <system value="email" />
+      <value value="francois.macary@phast.fr" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <purpose value="The Organization short name | Libellé court de l'organisation" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Organization" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://www.interopsante.org/fhir/structuredefinition/organization/fr-organization-shortname" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.value[x]:valueString">
+      <path value="Extension.value[x]" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

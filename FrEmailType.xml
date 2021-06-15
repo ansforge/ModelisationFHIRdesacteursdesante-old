@@ -1,0 +1,52 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="fr-email-type" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:17:47.701+00:00" />
+  </meta>
+  <url value="http://www.interopsante.org/fhir/structuredefinition/datatype/fr-email-type" />
+  <version value="4.0.0" />
+  <name value="FrEmailType" />
+  <status value="active" />
+  <date value="2021-03-25T16:59:21.7870225+00:00" />
+  <publisher value="Interop'Santé" />
+  <contact>
+    <name value="François Macary/Isabelle Gibaud" />
+    <telecom>
+      <system value="email" />
+      <value value="francois.macary@phast.fr" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="Extension on the ContactPoint datatype. This extension allows to specify the type of mail used to contact the person (MSSsanté|Apicrypt|OSM|Autre)." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="ContactPoint" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Type of email | type de messagerie électronique" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://www.interopsante.org/fhir/structuredefinition/datatype/fr-email-type" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="Coding" />
+      </type>
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://interopsante.org/fhir/valueset/fr-email-type" />
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

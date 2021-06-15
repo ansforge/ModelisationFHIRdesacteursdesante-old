@@ -1,0 +1,65 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="2dbae76d-f0f5-4496-8350-e49fdf74d05d" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:35:39.625+00:00" />
+  </meta>
+  <url value="http://www.interopsante.org/fhir/structuredefinition/datatype/fr-contact-point" />
+  <version value="4.0.0" />
+  <name value="FrContactPoint" />
+  <status value="active" />
+  <date value="2021-03-25T17:57:51.8552664+00:00" />
+  <publisher value="Interop'Santé" />
+  <contact>
+    <name value="François Macary/Isabelle Gibaud" />
+    <telecom>
+      <system value="email" />
+      <value value="francois.macary@phast.fr" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="ContactPoint" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ContactPoint" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ContactPoint.extension">
+      <path value="ContactPoint.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ContactPoint.extension:emailType">
+      <path value="ContactPoint.extension" />
+      <sliceName value="emailType" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://www.interopsante.org/fhir/structuredefinition/datatype/fr-email-type" />
+      </type>
+    </element>
+    <element id="ContactPoint.system">
+      <path value="ContactPoint.system" />
+      <min value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/contact-point-system" />
+      </binding>
+    </element>
+    <element id="ContactPoint.value">
+      <path value="ContactPoint.value" />
+      <min value="1" />
+    </element>
+    <element id="ContactPoint.use">
+      <path value="ContactPoint.use" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/contact-point-use" />
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

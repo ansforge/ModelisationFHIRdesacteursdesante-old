@@ -1,0 +1,253 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="e0a53379-3f1f-4d21-b570-639c17c16b18" />
+  <meta>
+    <lastUpdated value="2021-04-28T17:22:20.466+00:00" />
+  </meta>
+  <url value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS" />
+  <version value="1.0" />
+  <name value="MailboxMSS" />
+  <status value="active" />
+  <date value="2021-03-25T17:19:41.651257+00:00" />
+  <publisher value="ANS" />
+  <contact>
+    <name value="monserviceclient.annuaire@asipsante.fr" />
+  </contact>
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Practitioner" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="PractitionerRole" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="Organization" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:value">
+      <path value="Extension.extension" />
+      <sliceName value="value" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:value.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="value" />
+    </element>
+    <element id="Extension.extension:value.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:type">
+      <path value="Extension.extension" />
+      <sliceName value="type" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:type.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="type" />
+    </element>
+    <element id="Extension.extension:type.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="Binding JDV_J139-TypeBAL-RASS (dérivée de la TRE_R257-TypeBAL: « urn:oid: 1.2.250.1.213.3.3.55»)" />
+        <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS" />
+      </binding>
+    </element>
+    <element id="Extension.extension:description">
+      <path value="Extension.extension" />
+      <sliceName value="description" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:description.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="description" />
+    </element>
+    <element id="Extension.extension:description.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:responsible">
+      <path value="Extension.extension" />
+      <sliceName value="responsible" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:responsible.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="responsible" />
+    </element>
+    <element id="Extension.extension:responsible.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:service">
+      <path value="Extension.extension" />
+      <sliceName value="service" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:service.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="service" />
+    </element>
+    <element id="Extension.extension:service.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:phone">
+      <path value="Extension.extension" />
+      <sliceName value="phone" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:phone.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="phone" />
+    </element>
+    <element id="Extension.extension:phone.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:digitization">
+      <path value="Extension.extension" />
+      <sliceName value="digitization" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:digitization.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="digitization" />
+    </element>
+    <element id="Extension.extension:digitization.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:publication">
+      <path value="Extension.extension" />
+      <sliceName value="publication" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:publication.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="publication" />
+    </element>
+    <element id="Extension.extension:publication.value[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:date">
+      <path value="Extension.extension" />
+      <sliceName value="date" />
+    </element>
+    <element id="Extension.extension:date.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="date" />
+    </element>
+    <element id="Extension.extension:date.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="Meta" />
+      </type>
+    </element>
+    <element id="Extension.extension:date.value[x].source">
+      <path value="Extension.extension.value[x].source" />
+      <fixedUri value="https://annuaire.sante.fr" />
+    </element>
+    <element id="Extension.extension:date.value[x].profile">
+      <path value="Extension.extension.value[x].profile" />
+      <fixedCanonical value="https://apifhir.annuaire.sante.fr/exposed/structuredefinition/mailboxMSS" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
