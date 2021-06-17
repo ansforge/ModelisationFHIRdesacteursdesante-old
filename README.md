@@ -1,4 +1,4 @@
-# définitions de structure FHIR des données d'identification des acteurs de santé
+# Définitions de structure FHIR des données d'identification des acteurs de santé
 ## Contexte de publication des définitions de structure
 
 L’interopérabilité est la capacité d’un système d’information à communiquer avec d’autres systèmes d’information sans multiplier les efforts de développements. C'est un enjeu important pour la e-santé : pour que cette communication dématérialisée soit possible, il faut que tous les acteurs et surtout, tous leurs systèmes d’informations parlent le même langage. C’est dans ce cadre d’interopérabilité que l’Agence du Numérique en Santé propose une nouvelle offre de services, en mettant à disposition des utilisateurs de nouvelles extractions au format JSON, structurés selon la norme l’interopérabilité Fast Healthcare Interoperable Ressources (FHIR).
@@ -19,6 +19,10 @@ Les fichiers sont au format JSON, structurées selon la norme d’interopérabil
 Enfin, ce nouveau service offre la possibilité de récupérer les données de l'Annuaire santé via plusieurs critères de recherche : par profession, par géographie, par identifiant national, ou encore par type de personne physique ou morale.
 
 Vous trouverez les dernières informations à ce propos sur le site de l'ANS : https://esante.gouv.fr/securite/annuaire-sante.
+
+
+Les structures définitions sont également disponibles sur simplifier : https://simplifier.net/Modelisationdesstructuresetdesprofessionnels/~introduction
+
 
 
 © 2021 GitHub, Inc.
