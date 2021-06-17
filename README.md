@@ -21,7 +21,7 @@ Enfin, ce nouveau service offre la possibilité de récupérer les données de l
 Vous trouverez les dernières informations à ce propos sur le site de l'ANS : https://esante.gouv.fr/securite/annuaire-sante.
 
 
-A noter que ces structures définitions sont également disponibles sur simplifier : https://simplifier.net/Modelisationdesstructuresetdesprofessionnels/~introduction
+A noter que ces structures définitions sont également disponibles sur simplifier.net : https://simplifier.net/Modelisationdesstructuresetdesprofessionnels/~introduction
 
 
 
