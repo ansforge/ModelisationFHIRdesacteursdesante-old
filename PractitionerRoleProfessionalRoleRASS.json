@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "e8376e29-c873-4a0a-a5e8-c474b63023ab",
   "meta": {
-    "lastUpdated": "2021-04-28T17:51:58.722+00:00"
+    "lastUpdated": "2021-10-25T09:45:54.166+00:00"
   },
   "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-professionalRole-rass",
   "version": "1.0",
   "name": "PractitionerRoleProfessionalRoleRASS",
   "status": "active",
-  "date": "2021-03-25T18:16:09.7601405+00:00",
+  "date": "2021-04-28T17:52:43.8774063+00:00",
   "publisher": "ANS",
   "contact": [
     {
@@ -58,7 +58,7 @@
       {
         "id": "PractitionerRole.meta.profile",
         "path": "PractitionerRole.meta.profile",
-        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/practitionerRole-professionalRole-rass"
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-professionalRole-rass"
       },
       {
         "id": "PractitionerRole.extension",
@@ -71,12 +71,14 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 0
       },
       {
         "id": "PractitionerRole.extension:name",
         "path": "PractitionerRole.extension",
         "sliceName": "name",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -90,6 +92,7 @@
         "id": "PractitionerRole.extension:registration",
         "path": "PractitionerRole.extension",
         "sliceName": "registration",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -103,6 +106,7 @@
         "id": "PractitionerRole.extension:educationLevel",
         "path": "PractitionerRole.extension",
         "sliceName": "educationLevel",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -116,6 +120,7 @@
         "id": "PractitionerRole.extension:smartCard",
         "path": "PractitionerRole.extension",
         "sliceName": "smartCard",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -129,6 +134,7 @@
         "id": "PractitionerRole.extension:digitalCertificate",
         "path": "PractitionerRole.extension",
         "sliceName": "digitalCertificate",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -149,18 +155,21 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 0
       },
       {
         "id": "PractitionerRole.extension:digitalCertificate.extension:domain",
         "path": "PractitionerRole.extension.extension",
         "sliceName": "domain",
+        "min": 0,
         "max": "0"
       },
       {
         "id": "PractitionerRole.extension:mailboxMSS",
         "path": "PractitionerRole.extension",
         "sliceName": "mailboxMSS",
+        "min": 0,
         "type": [
           {
             "code": "Extension",

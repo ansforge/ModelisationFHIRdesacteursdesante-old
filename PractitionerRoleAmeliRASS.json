@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "5cfb933e-c9b6-4c86-a7be-5cd1d7bbf055",
   "meta": {
-    "lastUpdated": "2021-04-28T17:50:36.922+00:00"
+    "lastUpdated": "2021-10-25T09:47:19.905+00:00"
   },
   "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-ameli-rass",
   "version": "1.0",
   "name": "PractitionerRoleAmeliRASS",
   "status": "active",
-  "date": "2021-03-25T18:12:50.4115921+00:00",
+  "date": "2021-04-28T17:51:22.1358797+00:00",
   "publisher": "ANS",
   "contact": [
     {
@@ -57,7 +57,7 @@
       {
         "id": "PractitionerRole.meta.profile",
         "path": "PractitionerRole.meta.profile",
-        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/practitionerRole-ameli-rass"
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-ameli-rass"
       },
       {
         "id": "PractitionerRole.meta.security",
@@ -95,12 +95,14 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 0
       },
       {
         "id": "PractitionerRole.extension:partOf",
         "path": "PractitionerRole.extension",
         "sliceName": "partOf",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -115,6 +117,7 @@
         "id": "PractitionerRole.extension:contracted",
         "path": "PractitionerRole.extension",
         "sliceName": "contracted",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -129,6 +132,7 @@
         "id": "PractitionerRole.extension:hasCAS",
         "path": "PractitionerRole.extension",
         "sliceName": "hasCAS",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -143,6 +147,7 @@
         "id": "PractitionerRole.extension:vitaleAccepted",
         "path": "PractitionerRole.extension",
         "sliceName": "vitaleAccepted",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -219,12 +224,14 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 0
       },
       {
         "id": "PractitionerRole.availableTime.extension:appointmentRequired",
         "path": "PractitionerRole.availableTime.extension",
         "sliceName": "appointmentRequired",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -238,6 +245,7 @@
         "id": "PractitionerRole.availableTime.extension:homeCare",
         "path": "PractitionerRole.availableTime.extension",
         "sliceName": "homeCare",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -251,6 +259,7 @@
         "id": "PractitionerRole.availableTime.extension:activityType",
         "path": "PractitionerRole.availableTime.extension",
         "sliceName": "activityType",
+        "min": 0,
         "type": [
           {
             "code": "Extension",

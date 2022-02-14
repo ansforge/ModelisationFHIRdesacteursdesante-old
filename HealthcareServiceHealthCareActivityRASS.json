@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "0a3d36d6-f609-45c3-88d4-6e47aad24ae7",
   "meta": {
-    "lastUpdated": "2021-04-28T17:38:03.396+00:00"
+    "lastUpdated": "2021-10-25T09:47:46.353+00:00"
   },
   "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-HealthCareActivity-rass",
   "version": "1.0",
   "name": "HealthcareServiceHealthCareActivityRASS",
   "status": "active",
-  "date": "2021-03-25T18:01:42.2204017+00:00",
+  "date": "2021-04-28T17:38:48.5960824+00:00",
   "publisher": "ANS",
   "contact": [
     {
@@ -47,7 +47,7 @@
       {
         "id": "HealthcareService.meta.profile",
         "path": "HealthcareService.meta.profile",
-        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/HealthcareService-HealthCareActivity-rass"
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-HealthCareActivity-rass"
       },
       {
         "id": "HealthcareService.meta.security",
@@ -85,12 +85,14 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 1
       },
       {
         "id": "HealthcareService.extension:activityType",
         "path": "HealthcareService.extension",
         "sliceName": "activityType",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -105,6 +107,7 @@
         "id": "HealthcareService.extension:authorizationDate",
         "path": "HealthcareService.extension",
         "sliceName": "authorizationDate",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -134,6 +137,7 @@
         "id": "HealthcareService.extension:implementationPeriod",
         "path": "HealthcareService.extension",
         "sliceName": "implementationPeriod",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -148,6 +152,7 @@
         "id": "HealthcareService.extension:deleteAutorisationImplantation",
         "path": "HealthcareService.extension",
         "sliceName": "deleteAutorisationImplantation",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -162,6 +167,7 @@
         "id": "HealthcareService.extension:dateUpdateActivity",
         "path": "HealthcareService.extension",
         "sliceName": "dateUpdateActivity",
+        "min": 0,
         "max": "1",
         "type": [
           {

@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "a1411a70-d6fc-48c2-82de-4eb458122efb",
   "meta": {
-    "lastUpdated": "2021-06-15T14:40:40.079+00:00"
+    "lastUpdated": "2021-10-25T09:47:00.822+00:00"
   },
   "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-rass",
   "version": "0.1",
   "name": "OrganizationRASS",
   "status": "active",
-  "date": "2021-05-14T13:30:25.2187439+00:00",
+  "date": "2021-06-15T14:41:55.141808+00:00",
   "publisher": "ANS",
   "contact": [
     {
@@ -35,7 +35,7 @@
       {
         "id": "Organization.meta.profile",
         "path": "Organization.meta.profile",
-        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/organization-rass"
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-rass"
       },
       {
         "id": "Organization.extension",
@@ -48,24 +48,28 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 0
       },
       {
         "id": "Organization.extension:shortName",
         "path": "Organization.extension",
         "sliceName": "shortName",
+        "min": 0,
         "max": "0"
       },
       {
         "id": "Organization.extension:description",
         "path": "Organization.extension",
         "sliceName": "description",
+        "min": 0,
         "max": "0"
       },
       {
         "id": "Organization.extension:pharmacyLicence",
         "path": "Organization.extension",
         "sliceName": "pharmacyLicence",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -79,6 +83,7 @@
         "id": "Organization.extension:digitalCertificate",
         "path": "Organization.extension",
         "sliceName": "digitalCertificate",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -92,6 +97,7 @@
         "id": "Organization.extension:mailboxMSS",
         "path": "Organization.extension",
         "sliceName": "mailboxMSS",
+        "min": 0,
         "type": [
           {
             "code": "Extension",

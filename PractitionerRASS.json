@@ -2,14 +2,14 @@
   "resourceType": "StructureDefinition",
   "id": "bb02347e-adaf-433b-b6e7-388c3a6a2a6b",
   "meta": {
-    "lastUpdated": "2021-04-28T17:48:19.268+00:00"
+    "lastUpdated": "2021-10-25T09:48:11.896+00:00"
   },
   "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-rass",
   "version": "1.0",
   "name": "PractitionerRASS",
   "status": "active",
   "experimental": false,
-  "date": "2021-03-25T18:11:09.5740214+00:00",
+  "date": "2021-04-28T17:49:04.3952404+00:00",
   "publisher": "ANS",
   "contact": [
     {
@@ -37,7 +37,7 @@
       {
         "id": "Practitioner.meta.profile",
         "path": "Practitioner.meta.profile",
-        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/practitioner-rass"
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-rass"
       },
       {
         "id": "Practitioner.extension",
@@ -50,12 +50,14 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 0
       },
       {
         "id": "Practitioner.extension:nationality",
         "path": "Practitioner.extension",
         "sliceName": "nationality",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -69,6 +71,7 @@
         "id": "Practitioner.extension:authorization",
         "path": "Practitioner.extension",
         "sliceName": "authorization",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -82,6 +85,7 @@
         "id": "Practitioner.extension:deceasedDateTime",
         "path": "Practitioner.extension",
         "sliceName": "deceasedDateTime",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -95,6 +99,7 @@
         "id": "Practitioner.extension:birthPlace",
         "path": "Practitioner.extension",
         "sliceName": "birthPlace",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -108,6 +113,7 @@
         "id": "Practitioner.extension:mailboxMSS",
         "path": "Practitioner.extension",
         "sliceName": "mailboxMSS",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -159,12 +165,14 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 0
       },
       {
         "id": "Practitioner.name.extension:assemblyOrder",
         "path": "Practitioner.name.extension",
-        "sliceName": "assemblyOrder"
+        "sliceName": "assemblyOrder",
+        "min": 0
       },
       {
         "id": "Practitioner.name.extension:assemblyOrder.value[x]",

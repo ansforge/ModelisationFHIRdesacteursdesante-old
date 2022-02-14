@@ -2,13 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "bebe1e1a-fe55-43c5-ae7d-3f0dcea3e4a6",
   "meta": {
-    "lastUpdated": "2021-04-28T17:34:31.056+00:00"
+    "lastUpdated": "2021-10-25T09:47:33.388+00:00"
   },
   "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-rass",
   "version": "1.0",
   "name": "DeviceRASS",
   "status": "active",
-  "date": "2021-03-25T17:54:11.4375947+00:00",
+  "date": "2021-04-28T17:35:16.2874825+00:00",
   "publisher": "ANS",
   "contact": [
     {
@@ -52,7 +52,7 @@
       {
         "id": "Device.meta.profile",
         "path": "Device.meta.profile",
-        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/Device-rass"
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-rass"
       },
       {
         "id": "Device.meta.security",
@@ -90,12 +90,14 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 0
       },
       {
         "id": "Device.extension:numberAuthorizationARHGOS",
         "path": "Device.extension",
         "sliceName": "numberAuthorizationARHGOS",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -110,6 +112,7 @@
         "id": "Device.extension:authorizationDateDevice",
         "path": "Device.extension",
         "sliceName": "authorizationDateDevice",
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -124,6 +127,7 @@
         "id": "Device.extension:periodImplentation",
         "path": "Device.extension",
         "sliceName": "periodImplentation",
+        "min": 0,
         "max": "1",
         "type": [
           {
