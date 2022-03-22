@@ -1,0 +1,511 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "bb02347e-adaf-433b-b6e7-388c3a6a2a6b",
+  "meta": {
+    "lastUpdated": "2021-10-25T09:48:11.896+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-rass",
+  "version": "1.0",
+  "name": "PractitionerRASS",
+  "status": "active",
+  "experimental": false,
+  "date": "2021-04-28T17:49:04.3952404+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "description": "Profil RASS de la ressource Practitioner.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Practitioner",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Practitioner.meta",
+        "path": "Practitioner.meta"
+      },
+      {
+        "id": "Practitioner.meta.source",
+        "path": "Practitioner.meta.source",
+        "fixedUri": "https://annuaire.sante.fr"
+      },
+      {
+        "id": "Practitioner.meta.profile",
+        "path": "Practitioner.meta.profile",
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-rass"
+      },
+      {
+        "id": "Practitioner.extension",
+        "path": "Practitioner.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "Practitioner.extension:nationality",
+        "path": "Practitioner.extension",
+        "sliceName": "nationality",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-nationality"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.extension:authorization",
+        "path": "Practitioner.extension",
+        "sliceName": "authorization",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-authorization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.extension:deceasedDateTime",
+        "path": "Practitioner.extension",
+        "sliceName": "deceasedDateTime",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-deceasedDateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.extension:birthPlace",
+        "path": "Practitioner.extension",
+        "sliceName": "birthPlace",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-birthPlace"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.extension:mailboxMSS",
+        "path": "Practitioner.extension",
+        "sliceName": "mailboxMSS",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.identifier.type",
+        "path": "Practitioner.identifier.type",
+        "min": 1,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://interopsante.org/fhir/valueset/fr-practioner-identifier-type"
+        }
+      },
+      {
+        "id": "Practitioner.identifier.system",
+        "path": "Practitioner.identifier.system",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier.value",
+        "path": "Practitioner.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.name",
+        "path": "Practitioner.name",
+        "type": [
+          {
+            "code": "HumanName",
+            "profile": [
+              "http://www.interopsante.org/fhir/structuredefinition/datatype/fr-human-name"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.name.extension",
+        "path": "Practitioner.name.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "Practitioner.name.extension:assemblyOrder",
+        "path": "Practitioner.name.extension",
+        "sliceName": "assemblyOrder",
+        "min": 0
+      },
+      {
+        "id": "Practitioner.name.extension:assemblyOrder.value[x]",
+        "path": "Practitioner.name.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        }
+      },
+      {
+        "id": "Practitioner.name.prefix",
+        "path": "Practitioner.name.prefix",
+        "binding": {
+          "strength": "required",
+          "description": "Civilités des personnes physiques du RASS;https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.name.suffix",
+        "path": "Practitioner.name.suffix",
+        "binding": {
+          "strength": "extensible",
+          "description": "Civilités d'exercice d'un professionnel du RASS;https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.telecom",
+        "path": "Practitioner.telecom",
+        "type": [
+          {
+            "code": "ContactPoint",
+            "profile": [
+              "http://www.interopsante.org/fhir/structuredefinition/datatype/fr-contact-point"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.address",
+        "path": "Practitioner.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "description": "Two slices: one slice for the degree (diplôme obtenu) and one for its type (type diplôme obtenu)",
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeType",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeType",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Types de diplôme du RASS; https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeType.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.36"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR48",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR48",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR48.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.31"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR49",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR49",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR49.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.32"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR50",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR50",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR50.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.48"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR51",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR51",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR51.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.49"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR52",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR52",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR52.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.50"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR53",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR53",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR53.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.51"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR54",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR54",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR54.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.34"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR55",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR55",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR55.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.52"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR56",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR56",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR56.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.27"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR57",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR57",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR57.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.33"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR58",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR58",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR58.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.53"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:deegreeR36",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "deegreeR36",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:deegreeR36.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.54"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR47",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR47",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR47.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.30"
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR226",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "degreeR226",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des diplômes et qualifications du RASS; https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.code.coding:degreeR226.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.118"
+      },
+      {
+        "id": "Practitioner.qualification.issuer.identifier.system",
+        "path": "Practitioner.qualification.issuer.identifier.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.4.1"
+      },
+      {
+        "id": "Practitioner.communication",
+        "path": "Practitioner.communication",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Langues (codes ISO-639) des professionnels du RASS; https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS"
+        }
+      }
+    ]
+  }
+}

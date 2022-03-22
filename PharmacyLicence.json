@@ -1,0 +1,49 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "09aecc03-0f13-43d0-830f-e499317f3b5b",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:22:39.118+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence",
+  "version": "1.0",
+  "name": "PharmacyLicence",
+  "status": "active",
+  "date": "2021-03-25T17:20:39.4192583+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "description": "Numéro de licence officine",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Organization"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

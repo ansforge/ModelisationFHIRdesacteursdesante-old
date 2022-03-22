@@ -1,0 +1,74 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "6fb38d62-1627-451d-b731-776c825f7631",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:18:23.473+00:00"
+  },
+  "url": "http://www.interopsante.org/fhir/structuredefinition/organization/fr-organization-description",
+  "version": "4.0.0",
+  "name": "FrOrganizationDescription",
+  "status": "active",
+  "date": "2021-03-25T17:07:17.2460061+00:00",
+  "publisher": "Interop'Santé",
+  "contact": [
+    {
+      "name": "François Macary/Isabelle Gibaud",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "francois.macary@phast.fr",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Organization"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://www.interopsante.org/fhir/structuredefinition/organization/fr-organization-description"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Extension.value[x]:valueString",
+        "path": "Extension.value[x]",
+        "sliceName": "valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

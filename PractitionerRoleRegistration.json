@@ -1,0 +1,198 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "506b4a80-eedc-4aaf-9117-00be055c6367",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:31:17.755+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-registration",
+  "version": "1.0",
+  "name": "PractitionerRoleRegistration",
+  "status": "active",
+  "date": "2021-03-25T17:48:39.1509926+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "description": "Inscription/référencement du professionnel. Première inscription si \"isFirst = true\".",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "PractitionerRole"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Extension.extension:registeringOrganization",
+        "path": "Extension.extension",
+        "sliceName": "registeringOrganization",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:registeringOrganization.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "registeringOrganization"
+      },
+      {
+        "id": "Extension.extension:registeringOrganization.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Autorités d'enregistrement des acteurs de santé du RASS, https://mos.esante.gouv.fr/NOS/JDV_J83-AutoriteEnregistrement-RASS/FHIR/JDV-J83-AutoriteEnregistrement-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J83-AutoriteEnregistrement-RASS/FHIR/JDV-J83-AutoriteEnregistrement-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:registeringOrganizationDetail",
+        "path": "Extension.extension",
+        "sliceName": "registeringOrganizationDetail",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:registeringOrganizationDetail.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "registeringOrganizationDetail"
+      },
+      {
+        "id": "Extension.extension:registeringOrganizationDetail.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Départements (outre-mer et Monaco inclus) pour le RASS, https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:period",
+        "path": "Extension.extension",
+        "sliceName": "period",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:period.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "period"
+      },
+      {
+        "id": "Extension.extension:period.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:status",
+        "path": "Extension.extension",
+        "sliceName": "status",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:status.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "status"
+      },
+      {
+        "id": "Extension.extension:status.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Statut avancement dossier de référencement personne du RASS auprès d'un ordrehttps://mos.esante.gouv.fr/NOS/JDV_J85-StatutInscription-RASS/FHIR/JDV-J85-StatutInscription-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J85-StatutInscription-RASS/FHIR/JDV-J85-StatutInscription-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:hostingDepartment",
+        "path": "Extension.extension",
+        "sliceName": "hostingDepartment",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:hostingDepartment.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "hostingDepartment"
+      },
+      {
+        "id": "Extension.extension:hostingDepartment.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Départements (outre-mer et Monaco inclus) pour le RASS, https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS"
+        }
+      },
+      {
+        "id": "Extension.extension:isFirst",
+        "path": "Extension.extension",
+        "sliceName": "isFirst",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:isFirst.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "isFirst"
+      },
+      {
+        "id": "Extension.extension:isFirst.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-registration"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

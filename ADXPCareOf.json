@@ -1,0 +1,102 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "iso21090-ADXP-careOf",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:06:53.507+00:00"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
+    }
+  ],
+  "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-careOf",
+  "version": "4.0.0",
+  "name": "ADXPCareOf",
+  "status": "active",
+  "date": "2021-03-25T16:17:56.4982097+00:00",
+  "publisher": "Health Level Seven International (Modeling and Methodology)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/mnm"
+        }
+      ]
+    }
+  ],
+  "description": "The name of the party who will take receipt at the specified address, and will take on responsibility for ensuring delivery to the target recipient.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Address.line"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "careOf",
+        "definition": "The name of the party who will take receipt at the specified address, and will take on responsibility for ensuring delivery to the target recipient.",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "ADXP[partType=CAR]"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-careOf"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Extension.value[x]:valueString",
+        "path": "Extension.value[x]",
+        "sliceName": "valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

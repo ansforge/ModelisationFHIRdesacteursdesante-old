@@ -1,0 +1,575 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "e8376e29-c873-4a0a-a5e8-c474b63023ab",
+  "meta": {
+    "lastUpdated": "2021-10-25T09:45:54.166+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-professionalRole-rass",
+  "version": "1.0",
+  "name": "PractitionerRoleProfessionalRoleRASS",
+  "status": "active",
+  "date": "2021-04-28T17:52:43.8774063+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "description": "Informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel et le cadre de son exercice (civil, militaire, etc.).\r\nIl peut exister plusieurs exercices professionnels pour une personne à un instant donné.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "PractitionerRole",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "PractitionerRole.meta",
+        "path": "PractitionerRole.meta"
+      },
+      {
+        "id": "PractitionerRole.meta.source",
+        "path": "PractitionerRole.meta.source",
+        "fixedUri": "https://annuaire.sante.fr"
+      },
+      {
+        "id": "PractitionerRole.meta.profile",
+        "path": "PractitionerRole.meta.profile",
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-professionalRole-rass"
+      },
+      {
+        "id": "PractitionerRole.extension",
+        "path": "PractitionerRole.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "PractitionerRole.extension:name",
+        "path": "PractitionerRole.extension",
+        "sliceName": "name",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:registration",
+        "path": "PractitionerRole.extension",
+        "sliceName": "registration",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-registration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:educationLevel",
+        "path": "PractitionerRole.extension",
+        "sliceName": "educationLevel",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-educationLevel"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:smartCard",
+        "path": "PractitionerRole.extension",
+        "sliceName": "smartCard",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-smartCard"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:digitalCertificate",
+        "path": "PractitionerRole.extension",
+        "sliceName": "digitalCertificate",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/digitalCertificate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:digitalCertificate.extension",
+        "path": "PractitionerRole.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "PractitionerRole.extension:digitalCertificate.extension:domain",
+        "path": "PractitionerRole.extension.extension",
+        "sliceName": "domain",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.extension:mailboxMSS",
+        "path": "PractitionerRole.extension",
+        "sliceName": "mailboxMSS",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.practitioner",
+        "path": "PractitionerRole.practitioner",
+        "min": 1
+      },
+      {
+        "id": "PractitionerRole.organization",
+        "path": "PractitionerRole.organization",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.code.coding",
+        "path": "PractitionerRole.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "description": "Slicing permettant de coder la profession et la catégorie professionnelle sous le même élément.",
+          "rules": "open"
+        }
+      },
+      {
+        "id": "PractitionerRole.code.coding:CategorieProfession",
+        "path": "PractitionerRole.code.coding",
+        "sliceName": "CategorieProfession",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Catégories professionnelles dans le RASS, https://mos.esante.gouv.fr/NOS/JDV_J89-CategorieProfessionnelle-RASS/FHIR/JDV-J89-CategorieProfessionnelle-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J89-CategorieProfessionnelle-RASS/FHIR/JDV-J89-CategorieProfessionnelle-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code.coding:CategorieProfession.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.10"
+      },
+      {
+        "id": "PractitionerRole.code.coding:professionG15",
+        "path": "PractitionerRole.code.coding",
+        "sliceName": "professionG15",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des professions du RASS, https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code.coding:professionG15.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.71.1.2.7"
+      },
+      {
+        "id": "PractitionerRole.code.coding:professionR94",
+        "path": "PractitionerRole.code.coding",
+        "sliceName": "professionR94",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des professions du RASS, https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code.coding:professionR94.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.4"
+      },
+      {
+        "id": "PractitionerRole.code.coding:professionR95",
+        "path": "PractitionerRole.code.coding",
+        "sliceName": "professionR95",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des professions du RASS, https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code.coding:professionR95.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.109"
+      },
+      {
+        "id": "PractitionerRole.code.coding:professionR291",
+        "path": "PractitionerRole.code.coding",
+        "sliceName": "professionR291",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des professions du RASS, https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code.coding:professionR291.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.140"
+      },
+      {
+        "id": "PractitionerRole.specialty",
+        "path": "PractitionerRole.specialty",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding.system"
+            }
+          ],
+          "description": "Slicing pour séparer savoir-faire et attribution particulière",
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.specialty:AttributionParticuliere",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "AttributionParticuliere",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Attributions particulières obtenues par certains professionnels du RASS, https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:AttributionParticuliere.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.71.1.2.27"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR38",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireR38",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR38.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.28"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR39",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireR39",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR39.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.29"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR40",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireR40",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR40.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.30"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR42",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireR42",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR42.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.32"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR43",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireR43",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR43.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.33"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR44",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireR44",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR44.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.34"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR45",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireR45",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR45.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.35"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR97",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireR97",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireR97.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.111"
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireG13",
+        "path": "PractitionerRole.specialty",
+        "sliceName": "savoirFaireG13",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des savoir-faire et compétences du RASS, https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.specialty:savoirFaireG13.coding.system",
+        "path": "PractitionerRole.specialty.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.31"
+      },
+      {
+        "id": "PractitionerRole.location",
+        "path": "PractitionerRole.location",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.healthcareService",
+        "path": "PractitionerRole.healthcareService",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.telecom",
+        "path": "PractitionerRole.telecom",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.availableTime",
+        "path": "PractitionerRole.availableTime",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.notAvailable",
+        "path": "PractitionerRole.notAvailable",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.availabilityExceptions",
+        "path": "PractitionerRole.availabilityExceptions",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.endpoint",
+        "path": "PractitionerRole.endpoint",
+        "max": "0"
+      }
+    ]
+  }
+}

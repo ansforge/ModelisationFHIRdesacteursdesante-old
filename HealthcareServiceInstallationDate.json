@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "328f1322-d0f8-4922-bc27-4df1d54cf6c4",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:22:00.429+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-installationDate",
+  "version": "1.0",
+  "name": "HealthcareServiceInstallationDate",
+  "status": "active",
+  "date": "2021-03-25T17:18:35.4101278+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "HealthcareService"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-installationDate"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "date"
+          }
+        ]
+      }
+    ]
+  }
+}

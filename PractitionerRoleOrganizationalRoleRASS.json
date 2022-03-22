@@ -1,0 +1,397 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "67570c29-fc6d-41d1-a2d6-e65459b7039c",
+  "meta": {
+    "lastUpdated": "2022-03-16T11:10:07.258+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-organizationalRole-rass",
+  "version": "1.0",
+  "name": "PractitionerRoleOrganizationalRoleRASS",
+  "status": "active",
+  "date": "2021-03-25T18:14:24.4684966+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "description": "Caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée (à l'exception des remplaçants)",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "PractitionerRole",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "PractitionerRole.meta",
+        "path": "PractitionerRole.meta"
+      },
+      {
+        "id": "PractitionerRole.meta.source",
+        "path": "PractitionerRole.meta.source",
+        "fixedUri": "https://annuaire.sante.fr"
+      },
+      {
+        "id": "PractitionerRole.meta.profile",
+        "path": "PractitionerRole.meta.profile",
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-organizationalRole-rass"
+      },
+      {
+        "id": "PractitionerRole.contained",
+        "path": "PractitionerRole.contained",
+        "type": [
+          {
+            "code": "Resource",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/location-rass"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension",
+        "path": "PractitionerRole.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "PractitionerRole.extension:partOf",
+        "path": "PractitionerRole.extension",
+        "sliceName": "partOf",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-partOf"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:endCause",
+        "path": "PractitionerRole.extension",
+        "sliceName": "endCause",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-endCause"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:practiceRegion",
+        "path": "PractitionerRole.extension",
+        "sliceName": "practiceRegion",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-practiceRegion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:registration",
+        "path": "PractitionerRole.extension",
+        "sliceName": "registration",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-registration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.extension:mailboxMSS",
+        "path": "PractitionerRole.extension",
+        "sliceName": "mailboxMSS",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.practitioner",
+        "path": "PractitionerRole.practitioner",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.code",
+        "path": "PractitionerRole.code",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding.system"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:genreActivite",
+        "path": "PractitionerRole.code",
+        "sliceName": "genreActivite",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Activités des professionnels RASS nécessitant des règles de gestion spécifiques;https://mos.esante.gouv.fr/NOS/JDV_J94-GenreActivite-RASS/FHIR/JDV-J94-GenreActivite-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J94-GenreActivite-RASS/FHIR/JDV-J94-GenreActivite-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:genreActivite.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.19"
+      },
+      {
+        "id": "PractitionerRole.code:modeExercice",
+        "path": "PractitionerRole.code",
+        "sliceName": "modeExercice",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Modes d'exercice du professionnel du RASS, https://mos.esante.gouv.fr/NOS/JDV_J95-ModeExercice-RASS/FHIR/JDV-J95-ModeExercice-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J95-ModeExercice-RASS/FHIR/JDV-J95-ModeExercice-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:modeExercice.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.18"
+      },
+      {
+        "id": "PractitionerRole.code:typeActiviteLiberale",
+        "path": "PractitionerRole.code",
+        "sliceName": "typeActiviteLiberale",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Types d'activité libérale des professionnels du RASS, https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:typeActiviteLiberale.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.22"
+      },
+      {
+        "id": "PractitionerRole.code:statutProfessionnelSSA",
+        "path": "PractitionerRole.code",
+        "sliceName": "statutProfessionnelSSA",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Statuts des professionnels du Service de Santé des Armées dans le RASS, https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:statutProfessionnelSSA.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.23"
+      },
+      {
+        "id": "PractitionerRole.code:statutHospitalier",
+        "path": "PractitionerRole.code",
+        "sliceName": "statutHospitalier",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Statut des professionnels intervenant dans un hôpital dans le RASS, https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:statutHospitalier.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.21"
+      },
+      {
+        "id": "PractitionerRole.code:fonctionR21",
+        "path": "PractitionerRole.code",
+        "sliceName": "fonctionR21",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des fonctions et rôles du RASS, https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:fonctionR21.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.17"
+      },
+      {
+        "id": "PractitionerRole.code:fonctionR96",
+        "path": "PractitionerRole.code",
+        "sliceName": "fonctionR96",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des fonctions et rôles du RASS, https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:fonctionR96.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.110"
+      },
+      {
+        "id": "PractitionerRole.code:fonctionR85",
+        "path": "PractitionerRole.code",
+        "sliceName": "fonctionR85",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des fonctions et rôles du RASS, https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:fonctionR85.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.1.6.1.107"
+      },
+      {
+        "id": "PractitionerRole.code:metierPharmacienR06",
+        "path": "PractitionerRole.code",
+        "sliceName": "metierPharmacienR06",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des sections et sous-sections du tableau du CNOP dans le RASS, https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:metierPharmacienR06.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.213.2.37"
+      },
+      {
+        "id": "PractitionerRole.code:metierPharmacienG05",
+        "path": "PractitionerRole.code",
+        "sliceName": "metierPharmacienG05",
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "description": "Ensemble des sections et sous-sections du tableau du CNOP dans le RASS, https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS",
+          "valueSet": "https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS"
+        }
+      },
+      {
+        "id": "PractitionerRole.code:metierPharmacienG05.coding.system",
+        "path": "PractitionerRole.code.coding.system",
+        "fixedUri": "urn:oid:1.2.250.1.71.4.2.6"
+      },
+      {
+        "id": "PractitionerRole.specialty",
+        "path": "PractitionerRole.specialty",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.location",
+        "path": "PractitionerRole.location",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/location-rass"
+            ],
+            "aggregation": [
+              "contained"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.healthcareService",
+        "path": "PractitionerRole.healthcareService",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.telecom",
+        "path": "PractitionerRole.telecom",
+        "type": [
+          {
+            "code": "ContactPoint",
+            "profile": [
+              "http://www.interopsante.org/fhir/structuredefinition/datatype/fr-contact-point"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PractitionerRole.availableTime",
+        "path": "PractitionerRole.availableTime",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.notAvailable",
+        "path": "PractitionerRole.notAvailable",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.availabilityExceptions",
+        "path": "PractitionerRole.availabilityExceptions",
+        "max": "0"
+      },
+      {
+        "id": "PractitionerRole.endpoint",
+        "path": "PractitionerRole.endpoint",
+        "max": "0"
+      }
+    ]
+  }
+}

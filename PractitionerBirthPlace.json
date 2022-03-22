@@ -1,0 +1,65 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "b67ec90e-e843-4aa4-a3d4-b1b85ea5955a",
+  "meta": {
+    "lastUpdated": "2021-04-28T17:23:15.138+00:00"
+  },
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-birthPlace",
+  "version": "1.0",
+  "name": "PractitionerBirthPlace",
+  "status": "active",
+  "date": "2021-03-25T17:23:08.6374059+00:00",
+  "publisher": "ANS",
+  "contact": [
+    {
+      "name": "monserviceclient.annuaire@asipsante.fr"
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Practitioner"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-birthPlace"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        }
+      },
+      {
+        "id": "Extension.value[x]:valueAddress",
+        "path": "Extension.value[x]",
+        "sliceName": "valueAddress",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
