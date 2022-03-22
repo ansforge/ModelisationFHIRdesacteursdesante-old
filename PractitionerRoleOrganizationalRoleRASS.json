@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "67570c29-fc6d-41d1-a2d6-e65459b7039c",
   "meta": {
-    "lastUpdated": "2021-04-28T17:47:21.625+00:00"
+    "lastUpdated": "2022-03-16T11:10:07.258+00:00"
   },
   "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-organizationalRole-rass",
   "version": "1.0",
@@ -58,7 +58,7 @@
       {
         "id": "PractitionerRole.meta.profile",
         "path": "PractitionerRole.meta.profile",
-        "fixedCanonical": "https://apifhir.annuaire.sante.fr/exposed/structuredefinition/practitionerRole-organizationalRole-rass"
+        "fixedCanonical": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-organizationalRole-rass"
       },
       {
         "id": "PractitionerRole.contained",
@@ -83,7 +83,8 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 1
       },
       {
         "id": "PractitionerRole.extension:partOf",
@@ -104,6 +105,7 @@
         "id": "PractitionerRole.extension:endCause",
         "path": "PractitionerRole.extension",
         "sliceName": "endCause",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -117,6 +119,7 @@
         "id": "PractitionerRole.extension:practiceRegion",
         "path": "PractitionerRole.extension",
         "sliceName": "practiceRegion",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -130,6 +133,7 @@
         "id": "PractitionerRole.extension:registration",
         "path": "PractitionerRole.extension",
         "sliceName": "registration",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
@@ -143,6 +147,7 @@
         "id": "PractitionerRole.extension:mailboxMSS",
         "path": "PractitionerRole.extension",
         "sliceName": "mailboxMSS",
+        "min": 0,
         "type": [
           {
             "code": "Extension",
