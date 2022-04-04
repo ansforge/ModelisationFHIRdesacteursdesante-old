@@ -8,7 +8,7 @@ Une définition de structure définit les contraintes pour un champ dans une res
 L'Agence du Numérique en Santé propose ici les définitions de structure FHIR des données d'identification des acteurs de santé pour concertation.
 
 ## CONCERNANT L'API
-Une API d'interrogation des données FHIR d'identification des acteurs de santé conforme aux définitions de structure est en cours de développement par l'Agence du Numérique en Santé. Un premier service est disponible pour répondre à des besoins institutionnels. Un dossier de spécifications techniques et fonctionnelles, mises en concertation mi-2020, est consultable sur le site de l'ANS https://esante.gouv.fr/actualites/mise-en-concertation-du-nouveau-dsft-de-lannuaire-sante. Un service ouvert à tous exposant les données en libre accès doit ouvrir dans les prochains mois. 
+Une API d'interrogation des données FHIR d'identification des acteurs de santé conforme aux définitions de structure est en cours de développement par l'Agence du Numérique en Santé. Un premier service est disponible pour répondre à des besoins institutionnels. Un dossier de spécifications techniques et fonctionnelles, mises en concertation mi-2020, est consultable sur le site de l'ANS https://participez.esante.gouv.fr/project/dsft-annuaire/presentation/presentation. Un service ouvert à tous exposant les données en libre accès doit ouvrir dans les prochains mois. 
 
 Cette nouvelle offre met à disposition des web-services en mode :
 -    « FULL », pour récupérer l'ensemble des données disponibles.
