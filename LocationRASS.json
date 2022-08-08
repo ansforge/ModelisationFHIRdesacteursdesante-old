@@ -12,7 +12,7 @@
   "publisher": "ANS",
   "contact": [
     {
-      "name": "monserviceclient.annuaire@asipsante.fr"
+      "name": "monserviceclient.annuaire@esante.gouv.fr"
     }
   ],
   "description": "Profil de la ressource Location contained dans le profil Situation d'exercice de PractitionerRole. Elle contient l'adresse d'activité du professionnel.",

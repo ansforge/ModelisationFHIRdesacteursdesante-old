@@ -12,7 +12,7 @@
   "publisher": "ANS",
   "contact": [
     {
-      "name": "monserviceclient.annuaire@asipsante.fr"
+      "name": "monserviceclient.annuaire@esante.gouv.fr"
     }
   ],
   "description": "Extension of type Period on CodeableConcept type",

@@ -12,7 +12,7 @@
   "publisher": "ANS",
   "contact": [
     {
-      "name": "monserviceclient.annuaire@asipsante.fr"
+      "name": "monserviceclient.annuaire@esante.gouv.fr"
     }
   ],
   "description": "Informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel et le cadre de son exercice (civil, militaire, etc.).\r\nIl peut exister plusieurs exercices professionnels pour une personne à un instant donné.",

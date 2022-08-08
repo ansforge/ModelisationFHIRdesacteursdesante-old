@@ -12,7 +12,7 @@
   "publisher": "ANS",
   "contact": [
     {
-      "name": "monserviceclient.annuaire@asipsante.fr"
+      "name": "monserviceclient.annuaire@esante.gouv.fr"
     }
   ],
   "description": "Permet de faire le lien avec un exercice professionnel. Cette extension est à utiliser dans le profil situation d'exercice de la ressource PractitionerRole.",
