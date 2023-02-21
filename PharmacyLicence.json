@@ -4,7 +4,7 @@
   "meta": {
     "lastUpdated": "2021-04-28T17:22:39.118+00:00"
   },
-  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/StructureDefinition/organization-pharmacyLicence",
+  "url": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence",
   "version": "1.0",
   "name": "PharmacyLicence",
   "status": "active",
@@ -33,7 +33,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/StructureDefinition/organization-pharmacyLicence"
+        "fixedUri": "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence"
       },
       {
         "id": "Extension.value[x]",
